@@ -1,9 +1,17 @@
 {
   "name": "appium-dom-utils",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Appium utils implemented with DOM",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
+  "files": [
+    "dist",
+    "test"
+  ],
+  "directories": {
+    "lib": "dist",
+    "test": "test"
+  },
   "scripts": {
     "build-ts": "tsc",
     "build": "npm run build-ts",
@@ -24,7 +32,8 @@
   },
   "homepage": "https://github.com/testimio/appium-dom-utils#readme",
   "dependencies": {
-    "chrome-dompath": "^1.0.1",
+    "@types/jsdom": "^12.2.4",
+    "chrome-dompath": "^1.0.2",
     "jsdom": "^15.1.1",
     "typescript": "^3.5.3"
   },

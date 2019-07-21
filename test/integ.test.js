@@ -8,7 +8,7 @@ const {
 
 describe('Integration Test', () => {
 
-  it.only('android', async () => {
+  it.skip('android', async () => {
     const opts = {
       port: 4723,
       capabilities: {

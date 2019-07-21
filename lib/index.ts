@@ -1,6 +1,9 @@
-const { JSDOM } = require("jsdom");
+import { JSDOM } from 'jsdom';
 const { DOMParser } = new JSDOM().window;
-const DOMPath = require("chrome-dompath");
+import DOMPath from 'chrome-dompath';
+declare module "chrome-dompath" {
+  function _xPathIndex(node: Element): Number
+}
 
 export const getXPathSelector = (element: Element): string => {
   return DOMPath.xPath(element, true);
