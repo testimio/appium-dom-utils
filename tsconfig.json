@@ -1,12 +1,13 @@
 {
   "compilerOptions": {
     "target": "es5",
+    "module": "commonjs",
     "outDir": "dist",
     "declaration": true,
     "sourceMap": true,
     "strict": true,
-    "strictPropertyInitialization": false,
-    "lib": ["es2015", "es2017", "dom"]
+    "esModuleInterop": true,
+    "lib": ["es2017", "es7", "es6", "dom"],
   },
   "include": [
     "lib/**/*"

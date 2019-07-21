@@ -15,12 +15,13 @@ const {
 } = require('appium-dom-utils');
 const wdio = require("webdriverio");
 
-const client = await webdriverio.remote(capabilities);
-const xmlSourceString = driver.getPageSource();
+const client = await webdriverio.remote(opts);
+const xmlSourceString = await client.getPageSource();
 const dom = parseDomFromString(xmlSourceString);
 const domElement = dom.querySelector("[text*='9']");
 const xpath = getXPathSelector(domElement);
 const appiumElement = await client.$(xpath);
+await appiumElement.click();
 await client.deleteSession();
 ```
 
