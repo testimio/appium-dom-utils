@@ -1,4 +1,4 @@
-import { JSDOM } from 'jsdom';
+const JSDOM = require("jsdom").JSDOM;
 if (JSDOM) {
   DOMParser = new JSDOM().window.DOMParser;
 }

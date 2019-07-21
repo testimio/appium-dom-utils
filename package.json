@@ -5,7 +5,7 @@
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "browser": {
-    "index.js": "lib/DOMPath.js",
+    "index.js": "dist/index.js",
     "jsdom": false
   },
   "files": [
@@ -36,7 +36,6 @@
   },
   "homepage": "https://github.com/testimio/appium-dom-utils#readme",
   "dependencies": {
-    "@types/jsdom": "^12.2.4",
     "chrome-dompath": "^1.0.2",
     "jsdom": "^15.1.1",
     "typescript": "^3.5.3"
