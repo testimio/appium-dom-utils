@@ -1,0 +1,38 @@
+{
+  "name": "appium-dom-utils",
+  "version": "1.0.0",
+  "description": "Appium utils implemented with DOM",
+  "main": "dist/index.js",
+  "scripts": {
+    "build-ts": "tsc",
+    "build": "npm run build-ts",
+    "test": "npm run build && nyc mocha -r ts-node/register lib/**/*.test.js --exit"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/testimio/appium-dom-utils.git"
+  },
+  "keywords": [
+    "DOM",
+    "Appium"
+  ],
+  "author": "Ran Cohen <rannn505@outlook.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/testimio/appium-dom-utils/issues"
+  },
+  "homepage": "https://github.com/testimio/appium-dom-utils#readme",
+  "dependencies": {
+    "chrome-dompath": "^1.0.1",
+    "jsdom": "^15.1.1",
+    "typescript": "^3.5.3"
+  },
+  "devDependencies": {
+    "@types/node": "^12.6.8",
+    "chai": "^4.2.0",
+    "mocha": "^6.1.4",
+    "nyc": "^14.1.1",
+    "ts-node": "^8.3.0",
+    "webdriverio": "^5.11.6"
+  }
+}
