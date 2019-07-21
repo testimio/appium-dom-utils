@@ -1,5 +1,7 @@
 import { JSDOM } from 'jsdom';
-const { DOMParser } = new JSDOM().window;
+if (JSDOM) {
+  DOMParser = new JSDOM().window.DOMParser;
+}
 import DOMPath from 'chrome-dompath';
 declare module "chrome-dompath" {
   function _xPathIndex(node: Element): Number

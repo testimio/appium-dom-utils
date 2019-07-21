@@ -1,9 +1,13 @@
 {
   "name": "appium-dom-utils",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Appium utils implemented with DOM",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
+  "browser": {
+    "index.js": "lib/DOMPath.js",
+    "jsdom": false
+  },
   "files": [
     "dist",
     "test"
