@@ -1,5 +1,6 @@
 const expect = require('chai').expect;
 const JSDOM = require("jsdom").JSDOM;
+const { Document } = (new JSDOM()).window;
 const {
   parseDomFromString,
   getXPathSelector,
@@ -8,6 +9,11 @@ const {
 } = require('../lib/index');
 
 describe('Appium Selector Builder', () => {
+
+  describe('parseDomFromString', () => {
+    it('should return an Element', () => expect(parseDomFromString('<div></div>')).to.be.an.instanceOf(Document));
+    it('should support tags with $', () => expect(parseDomFromString('<div class="yay.$.yay"></div>').documentElement.outerHTML).to.equal('<div class="yay.$.yay"/>'));
+});
 
   it('element without attributes', () => {
     const dom = parseDomFromString('<root><a><b>T1</b><c>T2</c></a></root>');
