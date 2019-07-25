@@ -29,10 +29,10 @@ describe('Appium Selector Builder', () => {
       expect(selector).to.eql('a/b[`value CONTAINS "505" AND name CONTAINS "ran" AND label CONTAINS "cohen"`]');
     });
     it('element with attributes on chain', () => {
-      const dom = parseDomFromString('<root><a name="ran"><b label="cohen" value="505">T1</b><c>T2</c></a></root>');
+      const dom = parseDomFromString('<root><a name="ran" label=""><b label="false" value="true">T1</b><c>T2</c></a></root>');
       const targetElement = dom.querySelector('b');
       const selector = getClassChainSelector(targetElement);
-      expect(selector).to.eql('a[`name CONTAINS "ran"`]/b[`value CONTAINS "505" AND label CONTAINS "cohen"`]');
+      expect(selector).to.eql('a[`name CONTAINS "ran"`]/b[`value CONTAINS "true" AND label CONTAINS "false"`]');
     });
     it('element with attributes and indexes on chain', () => {
       const dom = parseDomFromString('<root><a name="ran"><b label="cohen">T1</b><b clickable="true" value="505">T2</b></a></root>');
